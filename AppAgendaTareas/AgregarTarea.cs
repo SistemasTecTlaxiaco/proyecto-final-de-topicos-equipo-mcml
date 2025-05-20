@@ -12,7 +12,8 @@ namespace AppAgendaTareas
 {
     public partial class AgregarTarea : Form 
     {
-        // Objeto para ejecutar operaciones con la BD
+
+        private TareaConsultas mTareaConsultas; // Objeto para ejecutar operaciones con la BD
         private Tarea mTarea; // Objeto modelo de tarea que se usa temporalmente
         private List<Tarea> mTareas; // Lista para almacenar tareas obtenidas de la BD
 
