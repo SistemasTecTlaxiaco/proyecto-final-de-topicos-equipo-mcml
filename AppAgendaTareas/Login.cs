@@ -56,6 +56,26 @@ namespace AppAgendaTareas
                     // Termina la ejecución del evento para evitar continuar con la validación.
                 }
             }
+            Usuario user = mLoginConsultas.ValidarLogin(usuario, contraseña);
+            // Llama al método ValidarLogin de la clase LoginConsultas para validar los datos ingresados con la base de datos.
+
+            if (user != null)
+            {
+                // Si el método retorna un usuario (es decir, los datos son correctos)...
+
+                MessageBox.Show("Bienvenido " + user.usuario);
+                // Muestra un mensaje de bienvenida con el nombre del usuario.
+
+                // Puedes pasar el ID del usuario al formulario de tareas si lo necesitas
+                AgregarTarea frm = new AgregarTarea();
+                // Crea una nueva instancia del formulario de tareas (AgregarTarea).
+
+                frm.Show();
+                // Muestra el formulario de tareas.
+
+                this.Hide();
+                // Oculta el formulario de login.
+            }
 
         private void txtCorreo_TextChanged(object sender, EventArgs e)
         {
