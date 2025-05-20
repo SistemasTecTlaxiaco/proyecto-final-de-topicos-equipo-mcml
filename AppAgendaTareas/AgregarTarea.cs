@@ -155,6 +155,25 @@ namespace AppAgendaTareas
                 return -1; // Vacío
         }
 
+        private void CargarTareas(string filtro = "")
+        {
+            dgvTareas.Rows.Clear(); // Limpia las filas del grid
+            dgvTareas.Refresh(); // Refresca visualmente
+            mTareas.Clear(); // Limpia la lista interna
+            mTareas = mTareaConsultas.consultarTareas(filtro); // Consulta a la BD
+
+            foreach (var tarea in mTareas) // Llena cada fila con una tarea
+            {
+                dgvTareas.Rows.Add(
+                    tarea.id,
+                    tarea.titulo,
+                    tarea.descripcion,
+                    tarea.fecha_vencimiento.ToShortDateString(),
+                    tarea.categoria,
+                    tarea.prioridad
+                );
+            }
+        }
 
 
 
