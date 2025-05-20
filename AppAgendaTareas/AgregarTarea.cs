@@ -122,11 +122,15 @@ namespace AppAgendaTareas
             return true; // Todo correcto
         }
 
-
-
-
-
-
+        private void CargarDatosTarea()
+        {
+            mTarea.id = ObtenerIdUsuario(); // Obtiene el ID de la tarea
+            mTarea.titulo = txtTitulo.Text.Trim(); // Título
+            mTarea.descripcion = txtDescripcion.Text.Trim(); // Descripción
+            mTarea.fecha_vencimiento = dtpFechaVencimiento.Value; // Fecha de vencimiento
+            mTarea.categoria = cmbCategoria.SelectedItem.ToString(); // Categoría
+            mTarea.prioridad = cmbPrioridad.SelectedItem.ToString(); // Prioridad
+        }
 
         private void LimpiarDatosTarea()
         {
