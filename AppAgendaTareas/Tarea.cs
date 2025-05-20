@@ -14,6 +14,13 @@ namespace AppAgendaTareas
         // almacenar el título o nombre de la tarea.
         public string titulo { get; set; }
 
+        //  contiene una descripción detallada de la tarea.
+        public string descripcion { get; set; }
+
+        //  indica la fecha de vencimiento o entrega de la tarea.
+        public DateTime fecha_vencimiento { get; set; }
+
+
 
     }
 }
