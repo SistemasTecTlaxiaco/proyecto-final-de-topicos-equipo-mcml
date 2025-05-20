@@ -20,6 +20,11 @@ namespace AppAgendaTareas
         //  indica la fecha de vencimiento o entrega de la tarea.
         public DateTime fecha_vencimiento { get; set; }
 
+        // e representa la categoría de la tarea (por ejemplo: estudio, trabajo, personal, etc.).
+        public string categoria { get; set; }
+
+        // indica el nivel de prioridad de la tarea (por ejemplo: alta, media, baja).
+        public string prioridad { get; set; }
 
 
     }
