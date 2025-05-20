@@ -201,7 +201,27 @@ namespace AppAgendaTareas
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-           
+            int id = ObtenerIdUsuario(); // Obtiene el ID
+            if (id == -1)
+            {
+                MessageBox.Show("ID de tarea no válido.");
+                return;
+            }
+
+            if (MessageBox.Show("¿Desea eliminar la tarea?", "Eliminar tarea", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (mTareaConsultas.eliminarTarea(id))
+                {
+                    MessageBox.Show("Tarea eliminada.");
+                    CargarTareas();
+                    LimpiarDatosTarea();
+                }
+                else
+                {
+                    MessageBox.Show("Error al eliminar la tarea.");
+                }
+            }
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
