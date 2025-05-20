@@ -83,7 +83,13 @@ namespace AppAgendaTareas
         {
             // Cadena base de consulta SQL.
             string CONSULTA = "SELECT * FROM tarea";
-        }
+            // Si se recibe un filtro, se añade cláusula WHERE para buscar coincidencias.
+            if (!string.IsNullOrEmpty(filtro))
+            {
+                CONSULTA += $" WHERE titulo LIKE '%{filtro}%' OR categoria LIKE '%{filtro}%' OR prioridad LIKE '%{filtro}%'";
+
+            }
         }
     }
+}
 
