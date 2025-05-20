@@ -44,8 +44,17 @@ namespace AppAgendaTareas
                     conexion.Open();
                 }
             }
+            catch (Exception e) // Captura cualquier excepción que ocurra al abrir la conexión.
+            {
+                // Muestra el error en una ventana emergente para depuración.
+                MessageBox.Show(e.ToString());
+            }
+
+            // Devuelve el objeto de conexión (abierto o previamente existente).
+            return conexion;
+        }
 
     }
     }
-}
+
 
