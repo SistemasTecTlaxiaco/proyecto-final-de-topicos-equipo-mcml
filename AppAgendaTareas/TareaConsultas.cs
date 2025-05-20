@@ -70,6 +70,13 @@ namespace AppAgendaTareas
             // Prepara el comando SQL.
             MySqlCommand mCommand = new MySqlCommand(DELETE, mConexion.getConexion());
 
+            // Asocia el parámetro con el ID recibido.
+            mCommand.Parameters.AddWithValue("@id", id);
+
+            // Ejecuta el comando y devuelve true si se eliminó al menos una fila.
+            return mCommand.ExecuteNonQuery() > 0;
+
+
         }
     }
     }
