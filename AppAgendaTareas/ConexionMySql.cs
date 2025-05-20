@@ -38,10 +38,14 @@ namespace AppAgendaTareas
                 {
                     conexion = new MySqlConnection(cadenaConexion);
                 }
-
-
+                // Si la conexión existe pero no está abierta, se abre.
+                if (conexion.State != System.Data.ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
             }
-        }
+
+    }
     }
 }
 
