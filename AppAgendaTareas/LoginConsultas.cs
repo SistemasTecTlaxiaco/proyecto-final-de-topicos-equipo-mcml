@@ -35,6 +35,17 @@ namespace AppAgendaTareas
                 // Se crea un nuevo comando MySQL usando la consulta anterior y la conexión a la base de datos.
                 MySqlCommand mCommand = new MySqlCommand(QUERY, mConexion.getConexion());
 
+                // Se agregan los valores de los parámetros a la consulta, lo que ayuda a prevenir ataques de inyección SQL.
+                mCommand.Parameters.AddWithValue("@usuario", usuario);
+                mCommand.Parameters.AddWithValue("@contraseña", contraseña);
+
+
+                // Ejecuta la consulta y obtiene un lector de resultados (data reader).
+                var reader = mCommand.ExecuteReader();
+
+                // Se declara un objeto 'user' que se usará para almacenar el resultado si se encuentra un usuario válido.
+                Usuario user = null;
+
 
             }
             }
