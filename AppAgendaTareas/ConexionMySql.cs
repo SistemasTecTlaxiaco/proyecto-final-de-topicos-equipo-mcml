@@ -28,7 +28,20 @@ namespace AppAgendaTareas
                           "; Password=" + password;
 
         }
+        // Método que devuelve una conexión abierta a la base de datos.
+        public MySqlConnection getConexion()
+        {
+            try
+            {
+                // Si la conexión aún no ha sido creada, se instancia con la cadena de conexión.
+                if (conexion == null)
+                {
+                    conexion = new MySqlConnection(cadenaConexion);
+                }
 
+
+            }
+        }
     }
-    }
+}
 
