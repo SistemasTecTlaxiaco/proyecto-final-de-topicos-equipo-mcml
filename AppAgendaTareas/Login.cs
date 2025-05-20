@@ -31,7 +31,7 @@ namespace AppAgendaTareas
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
-            //txtUsuario.BackColor = Color.Yellow;
+            txtUsuario.BackColor = Color.Yellow;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -87,6 +87,8 @@ namespace AppAgendaTareas
 
         private void txtCorreo_TextChanged(object sender, EventArgs e)
         {
+             txtCorreo.BackColor = Color.Pink;
+            txtContrasena.BackColor = Color.White;
         }
 
         private void txtContrasena_TextChanged(object sender, EventArgs e)
