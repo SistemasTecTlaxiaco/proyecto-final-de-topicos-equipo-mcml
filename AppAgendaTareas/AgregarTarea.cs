@@ -105,6 +105,35 @@ namespace AppAgendaTareas
 
 
 
+        private void LimpiarDatosTarea()
+        {
+            txtIdUsuario.Text = ""; // Borra ID
+            txtTitulo.Text = ""; // Borra título
+            txtDescripcion.Text = ""; // Borra descripción
+            cmbCategoria.SelectedIndex = -1; // Deselecciona categoría
+            cmbPrioridad.SelectedIndex = -1; // Deselecciona prioridad
+            dtpFechaVencimiento.Value = DateTime.Now; // Fecha actual
+        }
+
+        private int ObtenerIdUsuario()
+        {
+            if (!txtIdUsuario.Text.Trim().Equals("")) // Si no está vacío
+            {
+                if (int.TryParse(txtIdUsuario.Text.Trim(), out int id)) // Si es número válido
+                    return id;
+                else
+                    return -1; // No válido
+            }
+            else
+                return -1; // Vacío
+        }
+
+
+
+
+
+
+
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
