@@ -12,5 +12,14 @@ namespace AppAgendaTareas
         public int id { get; set; }
         // Propiedad pública 'id' de tipo entero. Representa el identificador único del usuario en la base de datos.
 
+        // Propiedad pública 'usuario' de tipo string. Guarda el nombre de usuario (username) que se utilizará para iniciar sesión o identificarse.
+        public string usuario { get; set; }
+      
+
+        // Propiedad pública 'contraseña' de tipo string. Almacena la contraseña del usuario.
+        public string contraseña { get; set; }
+      
+
+
     }
 }
