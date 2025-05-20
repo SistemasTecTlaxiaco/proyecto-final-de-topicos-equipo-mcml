@@ -99,6 +99,29 @@ namespace AppAgendaTareas
                 MessageBox.Show("Error al agregar la tarea."); // Mensaje de error
 
         }
+        private bool DatosCorrectos()
+        {
+            if (txtTitulo.Text.Trim().Equals("")) // Título vacío
+            {
+                MessageBox.Show("Ingrese el título de la tarea.");
+                return false;
+            }
+
+            if (cmbCategoria.SelectedItem == null) // Categoría no seleccionada
+            {
+                MessageBox.Show("Seleccione una categoría.");
+                return false;
+            }
+
+            if (cmbPrioridad.SelectedItem == null) // Prioridad no seleccionada
+            {
+                MessageBox.Show("Seleccione una prioridad.");
+                return false;
+            }
+
+            return true; // Todo correcto
+        }
+
 
 
 
