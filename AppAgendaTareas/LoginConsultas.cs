@@ -60,10 +60,18 @@ namespace AppAgendaTareas
                     };
 
                 }
+                // Cierra el lector de datos para liberar recursos.
+                reader.Close();
+
+                // Retorna el usuario si fue encontrado, o null si no hubo coincidencia.
+                return user;
+
+            }
+            // En caso de error (por ejemplo, problemas de conexión o de sintaxis en la consulta)...
 
 
             }
-            }
+    }
         
 
         }
