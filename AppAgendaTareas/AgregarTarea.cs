@@ -137,7 +137,20 @@ namespace AppAgendaTareas
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            
+            if (!DatosCorrectos())
+                return;
+
+            CargarDatosTarea();
+
+            if (mTareaConsultas.modificarTarea(mTarea))
+            {
+                MessageBox.Show("Tarea modificada correctamente.");
+                CargarTareas();
+                LimpiarDatosTarea();
+            }
+            else
+                MessageBox.Show("Error al modificar la tarea.");
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
