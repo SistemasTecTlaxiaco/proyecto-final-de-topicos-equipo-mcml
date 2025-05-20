@@ -10,14 +10,22 @@ using System.Windows.Forms;
 
 namespace AppAgendaTareas
 {
-    public partial class AgregarTarea : Form
+    public partial class AgregarTarea : Form 
     {
+        // Objeto para ejecutar operaciones con la BD
+        private Tarea mTarea; // Objeto modelo de tarea que se usa temporalmente
+        private List<Tarea> mTareas; // Lista para almacenar tareas obtenidas de la BD
 
-       
 
         public AgregarTarea()
         {
-            
+            InitializeComponent();  // Inicializa los controles del formulario
+            mTareaConsultas = new TareaConsultas(); // Crea instancia para acceder a la BD
+            mTarea = new Tarea(); // Inicializa una tarea vacía
+            mTareas = new List<Tarea>(); // Inicializa lista vacía
+
+            CargarTareas(); // Llama al método para mostrar las tareas al iniciar
+
 
         }
 
