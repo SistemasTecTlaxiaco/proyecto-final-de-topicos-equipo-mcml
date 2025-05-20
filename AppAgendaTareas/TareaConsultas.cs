@@ -89,6 +89,15 @@ namespace AppAgendaTareas
                 CONSULTA += $" WHERE titulo LIKE '%{filtro}%' OR categoria LIKE '%{filtro}%' OR prioridad LIKE '%{filtro}%'";
 
             }
+            // Lista donde se almacenarán las tareas consultadas.
+            List<Tarea> tareas = new List<Tarea>();
+
+            // Prepara el comando SQL.
+            MySqlCommand mCommand = new MySqlCommand(CONSULTA, mConexion.getConexion());
+
+            // Ejecuta la consulta y obtiene un lector de resultados.
+            var reader = mCommand.ExecuteReader();
+
         }
     }
 }
