@@ -20,8 +20,14 @@ namespace AppAgendaTareas
             mConexion = new ConexionMySql();
             // En el constructor se inicializa la conexión llamando al constructor de la clase 'ConexionMySql'.
         }
+        // Método público que valida si el usuario y contraseña existen en la base de datos.
+        // Retorna un objeto de tipo 'Usuario' si encuentra coincidencia, o null si no.
+        public Usuario ValidarLogin(string usuario, string contraseña)
+        {
 
+            // Bloque try-catch para manejar errores que puedan ocurrir al acceder a la base de datos.
+        }
 
+        }
     }
-}
 
