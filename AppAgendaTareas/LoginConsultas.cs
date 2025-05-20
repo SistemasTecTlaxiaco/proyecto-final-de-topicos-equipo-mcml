@@ -45,6 +45,21 @@ namespace AppAgendaTareas
 
                 // Se declara un objeto 'user' que se usará para almacenar el resultado si se encuentra un usuario válido.
                 Usuario user = null;
+                // Si el lector encontró al menos una fila que coincide...
+                if (reader.Read())
+                {
+
+                    // Se crea un nuevo objeto Usuario y se asignan sus propiedades con los datos obtenidos de la base.
+
+                    user = new Usuario
+                    {
+                        id = reader.GetInt32("id"),
+                        usuario = reader.GetString("usuario"),
+                        contraseña = reader.GetString("contraseña"),
+                        correo = reader.GetString("correo")
+                    };
+
+                }
 
 
             }
