@@ -68,12 +68,20 @@ namespace AppAgendaTareas
 
             }
             // En caso de error (por ejemplo, problemas de conexión o de sintaxis en la consulta)...
+            catch (Exception ex)
+            {
+
+                // Muestra un mensaje de error en pantalla.
+                MessageBox.Show("Error al validar login: " + ex.Message);
+
+                // Retorna null indicando que la validación no se pudo completar exitosamente.
+                return null;
 
 
             }
-    }
+        }
         
 
-        }
     }
+}
 
