@@ -40,6 +40,17 @@ namespace AppAgendaTareas
             return mCommand.ExecuteNonQuery() > 0;
 
         }
+        // Método para modificar una tarea existente.
+        public bool modificarTarea(Tarea tarea)
+        {
+            // Cadena SQL para actualizar una tarea según su ID.
+            string UPDATE = "UPDATE tarea SET titulo=@titulo, descripcion=@descripcion, fecha_vencimiento=@fecha, " +
+                "categoria=@categoria, prioridad=@prioridad WHERE id=@id";
 
+            // Prepara el comando SQL.
+            MySqlCommand mCommand = new MySqlCommand(UPDATE, mConexion.getConexion());
+        }
+
+        }
     }
-    }
+
