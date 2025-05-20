@@ -248,6 +248,16 @@ namespace AppAgendaTareas
             cmbCategoria.Items.Add("Salud");
             cmbCategoria.Items.Add("Otro");
 
+            // Cargar prioridades
+            cmbPrioridad.Items.Clear();
+            cmbPrioridad.Items.Add("Alta");
+            cmbPrioridad.Items.Add("Media");
+            cmbPrioridad.Items.Add("Baja");
+
+            // No seleccionar por defecto
+            cmbCategoria.SelectedIndex = -1;
+            cmbPrioridad.SelectedIndex = -1;
+
 
         }
 
