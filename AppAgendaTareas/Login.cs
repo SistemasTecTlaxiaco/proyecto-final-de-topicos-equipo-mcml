@@ -76,6 +76,14 @@ namespace AppAgendaTareas
                 this.Hide();
                 // Oculta el formulario de login.
             }
+            else
+            {
+                // Si no se encontró el usuario en la base de datos (datos incorrectos)...
+
+                MessageBox.Show("Usuario o contraseña incorrectos.");
+                // Muestra un mensaje de error.
+            }
+        }
 
         private void txtCorreo_TextChanged(object sender, EventArgs e)
         {
