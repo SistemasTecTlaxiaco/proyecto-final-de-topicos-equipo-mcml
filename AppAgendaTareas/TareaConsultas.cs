@@ -110,8 +110,17 @@ namespace AppAgendaTareas
                     prioridad = reader.GetString("prioridad")
                 };
 
-
+                // Agrega la tarea a la lista.
+                tareas.Add(tarea);
             }
+
+            // Cierra el lector de datos.
+            reader.Close();
+
+            // Devuelve la lista de tareas obtenidas.
+            return tareas;
+
         }
+    }
 }
 
