@@ -49,8 +49,19 @@ namespace AppAgendaTareas
 
             // Prepara el comando SQL.
             MySqlCommand mCommand = new MySqlCommand(UPDATE, mConexion.getConexion());
-        }
+            // Asocia los parámetros con los valores del objeto tarea.
+            mCommand.Parameters.AddWithValue("@titulo", tarea.titulo);
+            mCommand.Parameters.AddWithValue("@descripcion", tarea.descripcion);
+            mCommand.Parameters.AddWithValue("@fecha", tarea.fecha_vencimiento);
+            mCommand.Parameters.AddWithValue("@categoria", tarea.categoria);
+            mCommand.Parameters.AddWithValue("@prioridad", tarea.prioridad);
+            mCommand.Parameters.AddWithValue("@id", tarea.id); // Identificador de la tarea a modificar.
+
+            // Ejecuta el comando y devuelve true si se actualizó al menos una fila.
+            return mCommand.ExecuteNonQuery() > 0;
 
         }
+
+    }
     }
 
