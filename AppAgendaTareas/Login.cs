@@ -93,7 +93,8 @@ namespace AppAgendaTareas
 
         private void txtContrasena_TextChanged(object sender, EventArgs e)
         {
-           
+            txtContrasena.BackColor = Color.LightBlue;
+            txtUsuario.BackColor = Color.White;
 
         }
 
