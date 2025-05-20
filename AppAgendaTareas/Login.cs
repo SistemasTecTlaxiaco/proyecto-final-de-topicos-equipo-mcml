@@ -14,12 +14,13 @@ namespace AppAgendaTareas
     public partial class Login : Form
     {
         private LoginConsultas mLoginConsultas;
-
+            
 
         public Login()
         {
             InitializeComponent();
-           
+            // Crea una nueva instancia de la clase LoginConsultas, que se encargará de validar al usuario en la base de datos.
+            mLoginConsultas = new LoginConsultas();
         }
 
         private void Form1_Load(object sender, EventArgs e)
