@@ -61,7 +61,16 @@ namespace AppAgendaTareas
             return mCommand.ExecuteNonQuery() > 0;
 
         }
+        // Método para eliminar una tarea por ID.
+        public bool eliminarTarea(int id)
+        {
+            // Cadena SQL para eliminar una tarea por su ID.
+            string DELETE = "DELETE FROM tarea WHERE id = @id";
 
+            // Prepara el comando SQL.
+            MySqlCommand mCommand = new MySqlCommand(DELETE, mConexion.getConexion());
+
+        }
     }
     }
 
