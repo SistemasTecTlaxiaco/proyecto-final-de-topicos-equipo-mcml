@@ -25,7 +25,21 @@ namespace AppAgendaTareas
             // Cadena SQL para insertar una tarea.
             string INSERT = "INSERT INTO tarea (titulo, descripcion, fecha_vencimiento, categoria, prioridad) " +
                 "VALUES (@titulo, @descripcion, @fecha, @categoria, @prioridad)";
-        }
+
+            // Prepara el comando con la conexión.
+            MySqlCommand mCommand = new MySqlCommand(INSERT, mConexion.getConexion());
+
+            // Asocia los parámetros con los valores del objeto tarea.
+            mCommand.Parameters.AddWithValue("@titulo", tarea.titulo);
+            mCommand.Parameters.AddWithValue("@descripcion", tarea.descripcion);
+            mCommand.Parameters.AddWithValue("@fecha", tarea.fecha_vencimiento);
+            mCommand.Parameters.AddWithValue("@categoria", tarea.categoria);
+            mCommand.Parameters.AddWithValue("@prioridad", tarea.prioridad);
+
+            // Ejecuta el comando y devuelve true si se insertó al menos una fila.
+            return mCommand.ExecuteNonQuery() > 0;
 
         }
+
+    }
     }
