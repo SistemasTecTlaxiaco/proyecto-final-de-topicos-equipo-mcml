@@ -68,7 +68,17 @@ namespace AppAgendaTareas
 
         private void dgvTareas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+            if (e.RowIndex >= 0) // Asegura que se haga clic en una fila válida
+            {
+                DataGridViewRow fila = dgvTareas.Rows[e.RowIndex]; // Obtiene la fila clickeada
+                txtIdUsuario.Text = Convert.ToString(fila.Cells["ID"].Value); // Carga ID
+                txtTitulo.Text = Convert.ToString(fila.Cells["Titulo"].Value); // Carga Título
+                txtDescripcion.Text = Convert.ToString(fila.Cells["Descripcion"].Value); // Carga Descripción
+                dtpFechaVencimiento.Value = Convert.ToDateTime(fila.Cells["Fecha"].Value); // Carga Fecha
+                cmbCategoria.SelectedItem = Convert.ToString(fila.Cells["Categoria"].Value); // Carga Categoría
+                cmbPrioridad.SelectedItem = Convert.ToString(fila.Cells["Prioridad"].Value); // Carga Prioridad
+            }
+
         }
 
 
