@@ -31,7 +31,8 @@ namespace AppAgendaTareas
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-           
+            LimpiarDatosTarea(); // Llama al método que limpia los campos del formulario
+
         }
 
         private void txtTitulo_TextChanged(object sender, EventArgs e)
@@ -61,7 +62,8 @@ namespace AppAgendaTareas
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-           
+            CargarTareas(textBox1.Text.Trim()); // Carga tareas filtradas por texto
+
         }
 
         private void dgvTareas_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -93,6 +95,8 @@ namespace AppAgendaTareas
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
+            Application.Exit(); // Cierra la aplicación completa
+
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
