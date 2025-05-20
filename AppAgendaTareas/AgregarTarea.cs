@@ -24,7 +24,6 @@ namespace AppAgendaTareas
             mTareaConsultas = new TareaConsultas(); // Crea instancia para acceder a la BD
             mTarea = new Tarea(); // Inicializa una tarea vacía
             mTareas = new List<Tarea>(); // Inicializa lista vacía
-
             CargarTareas(); // Llama al método para mostrar las tareas al iniciar
 
 
