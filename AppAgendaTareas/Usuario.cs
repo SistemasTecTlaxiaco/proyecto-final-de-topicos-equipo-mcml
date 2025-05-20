@@ -18,7 +18,8 @@ namespace AppAgendaTareas
 
         // Propiedad pública 'contraseña' de tipo string. Almacena la contraseña del usuario.
         public string contraseña { get; set; }
-      
+        public string correo { get; set; }
+        // Propiedad pública 'correo' de tipo string. Guarda el correo electrónico del usuario, útil para contacto o recuperación de contraseña.
 
 
     }
