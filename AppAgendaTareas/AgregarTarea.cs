@@ -84,13 +84,26 @@ namespace AppAgendaTareas
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            
+            if (!DatosCorrectos()) // Verifica que los datos estén completos
+                return;
+
+            CargarDatosTarea(); // Carga los datos del formulario al objeto tarea
+
+            if (mTareaConsultas.agregarTarea(mTarea)) // Intenta insertar la tarea
+            {
+                MessageBox.Show("Tarea agregada correctamente."); // Mensaje de éxito
+                CargarTareas(); // Refresca la tabla
+                LimpiarDatosTarea(); // Limpia el formulario
+            }
+            else
+                MessageBox.Show("Error al agregar la tarea."); // Mensaje de error
+
         }
-       
-        
 
 
-       
+
+
+
 
 
         private void btnModificar_Click(object sender, EventArgs e)
