@@ -25,18 +25,37 @@ namespace AppAgendaTareas
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
-            
+            this.CenterToScreen();
+
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
-          
+            //txtUsuario.BackColor = Color.Yellow;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-        }
+            {
+                // Evento que se ejecuta cuando el usuario hace clic en el botón "Guardar" (Iniciar sesión).
+
+                string usuario = txtUsuario.Text.Trim();
+                // Obtiene el texto ingresado en el TextBox de usuario y elimina espacios al principio y al final.
+
+                string contraseña = txtContrasena.Text.Trim();
+                // Obtiene el texto ingresado en el TextBox de contraseña y elimina espacios al principio y al final.
+
+                if (usuario == "" || contraseña == "")
+                {
+                    // Verifica si alguno de los campos está vacío.
+
+                    MessageBox.Show("Ingrese usuario y contraseña.");
+                    // Muestra un mensaje de advertencia si algún campo está vacío.
+
+                    return;
+                    // Termina la ejecución del evento para evitar continuar con la validación.
+                }
+            }
 
         private void txtCorreo_TextChanged(object sender, EventArgs e)
         {
