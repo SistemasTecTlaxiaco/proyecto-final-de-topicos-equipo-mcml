@@ -218,7 +218,17 @@ namespace AppAgendaTareas
 
         private void AgregarTarea_Load(object sender, EventArgs e)
         {
-            
+            this.CenterToScreen(); // Centra el formulario en pantalla
+
+            // Cargar categorías en el ComboBox
+            cmbCategoria.Items.Clear();
+            cmbCategoria.Items.Add("Trabajo");
+            cmbCategoria.Items.Add("Escuela");
+            cmbCategoria.Items.Add("Personal");
+            cmbCategoria.Items.Add("Salud");
+            cmbCategoria.Items.Add("Otro");
+
+
         }
 
         private void txtIdUsuario_TextChanged(object sender, EventArgs e)
