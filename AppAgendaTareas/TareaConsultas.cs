@@ -97,8 +97,21 @@ namespace AppAgendaTareas
 
             // Ejecuta la consulta y obtiene un lector de resultados.
             var reader = mCommand.ExecuteReader();
+            // Lee cada fila del resultado y crea un objeto Tarea.
+            while (reader.Read())
+            {
+                Tarea tarea = new Tarea
+                {
+                    id = reader.GetInt32("id"),
+                    titulo = reader.GetString("titulo"),
+                    descripcion = reader.GetString("descripcion"),
+                    fecha_vencimiento = reader.GetDateTime("fecha_vencimiento"),
+                    categoria = reader.GetString("categoria"),
+                    prioridad = reader.GetString("prioridad")
+                };
 
+
+            }
         }
-    }
 }
 
