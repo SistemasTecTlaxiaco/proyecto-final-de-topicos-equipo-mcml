@@ -11,13 +11,17 @@ namespace AppAgendaTareas
     // Clase 'LoginConsultas' definida como 'internal' (accesible solo dentro del mismo proyecto).
     internal class LoginConsultas
     {
-       
-       
+        // Objeto de la clase 'ConexionMySql' que se usará para abrir la conexión con la base de datos.
+
+        private ConexionMySql mConexion;
 
         public LoginConsultas()
         {
-           
-          
+            mConexion = new ConexionMySql();
+            // En el constructor se inicializa la conexión llamando al constructor de la clase 'ConexionMySql'.
         }
+
+
     }
 }
+
