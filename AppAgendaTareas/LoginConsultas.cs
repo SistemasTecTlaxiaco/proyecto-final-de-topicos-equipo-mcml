@@ -26,7 +26,19 @@ namespace AppAgendaTareas
         {
 
             // Bloque try-catch para manejar errores que puedan ocurrir al acceder a la base de datos.
-        }
+            try
+            {
+
+                // Cadena de consulta SQL con parámetros para buscar al usuario con el nombre y contraseña indicados.
+                string QUERY = "SELECT * FROM login WHERE usuario = @usuario AND contraseña = @contraseña";
+
+                // Se crea un nuevo comando MySQL usando la consulta anterior y la conexión a la base de datos.
+                MySqlCommand mCommand = new MySqlCommand(QUERY, mConexion.getConexion());
+
+
+            }
+            }
+        
 
         }
     }
