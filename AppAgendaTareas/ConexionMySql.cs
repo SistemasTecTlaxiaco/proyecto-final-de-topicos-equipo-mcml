@@ -21,8 +21,14 @@ namespace AppAgendaTareas
         public ConexionMySql()
         {
             // Se construye la cadena de conexión utilizando los datos protegidos de la clase base.
-        }
+            cadenaConexion = "Database=" + database +
+                          "; DataSource=" + server +
+                          "; Port=" + port +
+                          "; User Id=" + user +
+                          "; Password=" + password;
 
         }
+
+    }
     }
 
