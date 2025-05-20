@@ -78,6 +78,12 @@ namespace AppAgendaTareas
 
 
         }
-    }
+        // Método para consultar las tareas almacenadas, con opción de aplicar un filtro.
+        public List<Tarea> consultarTareas(string filtro = "")
+        {
+            // Cadena base de consulta SQL.
+            string CONSULTA = "SELECT * FROM tarea";
+        }
+        }
     }
 
